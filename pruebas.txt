@@ -1,0 +1,40 @@
+# Máquina de Turing para aceptar a*b*
+start: q0
+accept: [q_accept]
+reject: [q_reject]
+transitions:
+  - from: q0
+    read: a
+    to: q0
+    write: a
+    move: R
+
+  - from: q0
+    read: b
+    to: q1
+    write: b
+    move: R
+
+  - from: q0
+    read: _
+    to: q_accept
+    write: _
+    move: S
+
+  - from: q1
+    read: b
+    to: q1
+    write: b
+    move: R
+
+  - from: q1
+    read: _
+    to: q_accept
+    write: _
+    move: S
+
+  - from: q1
+    read: a
+    to: q_reject
+    write: a
+    move: S

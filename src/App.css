@@ -1,0 +1,133 @@
+/* App.css */
+
+html, body, #root {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  height: 60vh;
+  background-color: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.split > div {
+  overflow: auto;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.split > div:nth-child(1) {
+  background-color: #f9fafb;
+  border-right: 2px solid #e2e8f0;
+}
+
+.split > div:nth-child(2) {
+  background-color: #fdfdfd;
+}
+
+.gutter {
+  background-color: #cbd5e1;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  cursor: col-resize;
+  width: 8px;
+}
+
+.gutter:hover {
+  background-color: #94a3b8;
+}
+
+.simulador {
+  min-height: 200px;
+  max-height: 90vh;
+  height: 40vh;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  background-color: #f8fafc;
+  overflow-y: auto;
+  border-top: 2px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  resize: vertical;
+  box-sizing: border-box;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  transition: background 0.2s;
+}
+
+.simulador-log {
+  flex: 1 1 0%;
+  overflow-y: auto;
+  max-height: 100%;
+  scroll-behavior: smooth;
+  background: #f3f4f6;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.graph-viewer-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.graph-viewer-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #334155;
+  z-index: 2;
+  position: relative;
+  background: inherit;
+}
+
+.graph-viewer-zoom {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: grab;
+  z-index: 1;
+}
+
+.graph-viewer-zoom:active {
+  cursor: grabbing;
+}
+
+.dark .split {
+  background-color: #1e293b;
+}
+
+.dark .split > div {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+.dark .gutter {
+  background-color: #334155;
+}
+
+.dark .gutter:hover {
+  background-color: #475569;
+}
+
+.dark .simulador {
+  background-color: #1e293b;
+}
